@@ -1,0 +1,88 @@
+.nav_bar {
+    font-family: 'IRANYekan', sans-serif;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* عنوان راست، آیتم‌ها چپ */
+    align-items: center;
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+}
+
+.navbar_brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar_nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav_link {
+    color: #fffbf2;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4rem
+}
+
+.nav_link:hover,
+.active_nav_link {
+    color: #da9f5b;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    list-style: none;
+}
+
+.dropdown:hover .dropdown_menu {
+    display: block;
+}
+
+.dropdown_item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    color: #212529;
+    text-decoration: none;
+}
+
+.dropdown_item:hover {
+    background: #f8f9fa;
+    color: #16181b;
+}
+
+/* موبایل */
+@media (max-width: 991.98px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar_nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+}
