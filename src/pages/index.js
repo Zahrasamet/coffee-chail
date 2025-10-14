@@ -1,15 +1,29 @@
-import About from '@/component/template/About'
-import Slider from '@/component/template/Slider'
+import About from '@/component/template/About';
+import Services from '@/component/template/Services';
+import Slider from '@/component/template/Slider';
 
-
-
-function index() {
+function Index({ data }) {
   return (
     <>
-    <Slider/>
-      <About/>
+      <Slider />
+      <About />
+      <Services services={data.services} />
     </>
-  )
+  );
 }
 
-export default index
+export async function getStaticProps() {
+  const servicesResponse = await fetch("http://localhost:5000/services");
+  const serviceData = await servicesResponse.json();
+
+  return {
+    props: {
+      data: {
+        services: serviceData
+      }
+    },
+    revalidate: 60 * 60 * 12 // بازسازی هر 12 ساعت
+  };
+}
+
+export default Index;
