@@ -1,4 +1,5 @@
 import About from '@/component/template/About';
+import Offer from '@/component/template/Offer';
 import Services from '@/component/template/Services';
 import Slider from '@/component/template/Slider';
 
@@ -8,6 +9,7 @@ function Index({ data }) {
       <Slider />
       <About />
       <Services services={data.services} />
+      <Offer/>
     </>
   );
 }
