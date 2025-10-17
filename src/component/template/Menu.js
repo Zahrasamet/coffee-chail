@@ -1,40 +1,41 @@
+import React from "react";
 import Card from "../module/card/Card";
 
-
 function Menu({ data }) {
-  console.log("Menu =>", data);
-
   return (
     <div className="container-fluid pt-5">
       <div className="container">
-        <div className="section-title">
+        
+        <div className="section-title text-center">
           <h4
             className="text-primary text-uppercase"
             style={{ letterSpacing: "5px" }}
           >
-            Menu &amp; Pricing
+            منو و قیمت
           </h4>
-          <h1 className="display-4">کیفیت بالا، قیمت مناسب، لبخند شما هدف ماست.</h1>
+          <h1 className="display-4">
+            کیفیت بالا، قیمت مناسب، لبخند شما هدف ماست.
+          </h1>
         </div>
-        <div className="row">
-          <div className="col-lg-6">
-            <h1 className="mb-5">نوشیدنی داغ</h1>
 
+        <div className="row">
+          {/* ستون نوشیدنی داغ */}
+          <div className="col-lg-6 text-start mb-5 mb-lg-0">
+            <h1 className="mb-5">نوشیدنی داغ</h1>
             {data
               .filter((item) => item.type === "hot")
-              .slice(0, 3)
               .map((item) => (
-                <Card {...item} />
+                <Card key={item.id} {...item} />
               ))}
           </div>
 
-          <div className="col-lg-6">
+          {/* ستون نوشیدنی سرد */}
+          <div className="col-lg-6 text-end">
             <h1 className="mb-5">نوشیدنی سرد</h1>
             {data
               .filter((item) => item.type === "cold")
-              .slice(0, 3)
               .map((item) => (
-                <Card {...item} />
+                <Card key={item.id} {...item} />
               ))}
           </div>
         </div>
