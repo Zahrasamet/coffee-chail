@@ -19,7 +19,7 @@ function Menu({ data }) {
         </div>
 
         <div className="row">
-          {/* ستون نوشیدنی داغ */}
+        
           <div className="col-lg-6 text-start mb-5 mb-lg-0">
             <h1 className="mb-5">نوشیدنی داغ</h1>
             {data
@@ -29,7 +29,7 @@ function Menu({ data }) {
               ))}
           </div>
 
-          {/* ستون نوشیدنی سرد */}
+      
           <div className="col-lg-6 text-end">
             <h1 className="mb-5">نوشیدنی سرد</h1>
             {data
