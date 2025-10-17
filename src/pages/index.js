@@ -30,7 +30,7 @@ export async function getStaticProps() {
         menu: menuData,
       }
     },
-    revalidate: 60 * 60 * 12 // بازسازی هر 12 ساعت
+    revalidate: 60 * 60 * 12 
   };
 }
 
