@@ -4,6 +4,9 @@ import Offer from '@/component/template/Offer';
 import Services from '@/component/template/Services';
 import Slider from '@/component/template/Slider';
 
+import servicesData from "../../data/services.json"
+import menuData from "../../data/menuItem.json";
+
 function Index({ data }) {
   return (
     <>
@@ -17,20 +20,14 @@ function Index({ data }) {
 }
 
 export async function getStaticProps() {
-  const servicesResponse = await fetch("http://localhost:5000/services");
-  const serviceData = await servicesResponse.json();
-
-   const menuResponse = await fetch("http://localhost:5000/menuItem");
-  const menuData = await menuResponse.json();
-
   return {
     props: {
       data: {
-        services: serviceData,
+        services: servicesData,
         menu: menuData,
-      }
+      },
     },
-    revalidate: 60 * 60 * 12 
+    revalidate: 60 * 60 * 12, // هر 12 ساعت
   };
 }
 
