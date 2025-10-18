@@ -6,6 +6,7 @@ import Slider from '@/component/template/Slider';
 
 import servicesData from "../../data/services.json"
 import menuData from "../../data/menuItem.json";
+import Reservation from '@/component/template/Reservation';
 
 function Index({ data }) {
   return (
@@ -15,6 +16,7 @@ function Index({ data }) {
       <Services services={data.services} />
       <Offer/>
       <Menu data={data.menu}/>
+      <Reservation/>
     </>
   );
 }
